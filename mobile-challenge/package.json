@@ -7,18 +7,26 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "tests": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
   },
   "dependencies": {
     "expo": "~44.0.0",
     "expo-status-bar": "~1.2.0",
+    "node-fetch": "^3.2.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3",
+    "react-test-renderer": "^17.0.2"
   },
   "private": true
 }
