@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, ActivityIndicator } from 'react-native';
 
 export default class App extends React.Component{
   
@@ -18,13 +18,11 @@ export default class App extends React.Component{
         this.setState({
           isLoading: false,
           peopleData: responseJson.entries
-        })
-        
+        })  
       })
       .catch((error)=>{
         console.log(error)
       });
-
   }
   render(){
     //indicate that the page is loading
@@ -36,14 +34,16 @@ export default class App extends React.Component{
       )
     }else{
       // map over the people data array 
-      let people = this.state.peopleData.map((val,key)=>{
+      let people = this.state.peopleData.map((person,key)=>{
+        
         return <SafeAreaView key={key} style={styles.item}>
-                  <Text>{val.email}</Text>
+                  <Text>{person.name.firstName} {person.name.lastName}</Text>
+                  <Text>Email: {person.email} </Text>
                </SafeAreaView>
       })
       
-      return (
-        <SafeAreaView style={styles.container}>
+      return(
+        <SafeAreaView style={styles.container}>   
         {people}
       </SafeAreaView>
       );
@@ -63,5 +63,7 @@ const styles = StyleSheet.create({
     flex:1,
     alignSelf: 'stretch',
     alignItems:"center",
+    justifyContent:"center",
+    borderBottomWidth:1,
   }
 });
