@@ -33,7 +33,4 @@ My first improvement would be to add hooks. Although classes work react hooks lo
 ### Data Manipulation 
 I would have loved to impliment a dropdown that lets users change the displayed data.  I could have implimented a Inertion sort algortithm that would orginize the given objects alphabetical order. 
 ### Tests 
-I ran into some issues with testing with this error 
-
-![[Pasted image 20220329041703.png]]
-and unfortunately a lot of my time was spent on it. I am going to keep plugging away at this and hopfully will have an answer for you in the future. I added the code in my submission  in a seperate branch for you to take a look at despite it not working.
+I ran into some issues with testing and unfortunately a lot of my time was spent on it. I am going to keep plugging away at this and hopfully will have an answer for you in the future. I added the code in my submission  in a seperate branch for you to take a look at despite it not working.
