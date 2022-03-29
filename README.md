@@ -15,7 +15,7 @@ https://github.com/ericfrancis313/mobile-challenge.git
 ```
 Navigate to
 ```
-cd mobile-challenge/
+cd mobile-challenge
 ```
 and Install
 ```
