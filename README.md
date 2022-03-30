@@ -3,9 +3,10 @@
 ## About
 A simple mobile application that displays the information from an API 
 ## Tech Used 
-React-Native
-Jest
-npm
+JavaScript,
+React-Native,
+Jest,
+npm,
 
 
 ## Installation 
