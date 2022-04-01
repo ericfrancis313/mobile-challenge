@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 export default function App(){
   const[peopleData,setPeopleData] = useState([]);
   const[isLoading,setIsLoading]=useState(false)
+  //load blocker is used to prevent multiple API calls
   const[loadBlocker,setLoadBlocker]=useState(false)
   // Add Api 
   useEffect(()=>{
