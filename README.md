@@ -38,7 +38,7 @@ My first improvement would be to add hooks. Although classes work, react hooks l
 Implimented react hooks, had a ton of fun learning more about them!
 
 ### Data Manipulation (Updated)
-I would have loved to impliment a dropdown that lets users change the displayed data.  I could have implimented a Inertion sort algortithm that would orginize the given objects alphabetical order. 
+I would have loved to impliment a dropdown that lets users change the displayed data.  I could have implimented an algortithm that would orginize the given objects alphabetical order. 
 
 #### Update: (4/1/2022)
 Added a branch to sort the data alphabetically, currently there is a bug where the sorted array does not render on the page until the user loads more people.
