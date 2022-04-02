@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, SafeAreaView, ActivityIndicator,Button,ScrollView } from 'react-native';
 import { useState, useEffect } from 'react';
 
+
 export default function App(){
   const[peopleData,setPeopleData] = useState([]);
   const[isLoading,setIsLoading]=useState(false)
   //load blocker is used to prevent multiple API calls
   const[loadBlocker,setLoadBlocker]=useState(false)
+
   // Add Api 
   useEffect(()=>{
     if(loadBlocker){
@@ -14,10 +16,9 @@ export default function App(){
       return fetch("https://my.api.mockaroo.com/users.json?page=20&count=5&key=930279b0")
       .then((response)=> response.json())
       .then((responseJson)=>{
-      debugger
+      setLoadBlocker(false)
       setPeopleData(peopleData.concat(responseJson.entries));
       setIsLoading(false)
-      setLoadBlocker(false)
       return () => { isMounted = false };
     })
     .catch((error)=>{
@@ -29,6 +30,19 @@ export default function App(){
   const handleLoader=(e)=>{
     setLoadBlocker(true)
   }
+
+  
+  const handleSort=(e)=>{  
+    setIsLoading(true)
+    setPeopleData(
+      peopleData.sort(function(a, b) {
+      var textA = a.name.firstName.toUpperCase();
+      var textB = b.name.firstName.toUpperCase();
+      return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;  
+      })
+    )
+    setIsLoading(false)
+  }
     //indicate that the page is loading
     if(isLoading){
       return(
@@ -38,21 +52,21 @@ export default function App(){
       )
     }else{
       // map over the people data array 
-      let people = peopleData.map((person,key)=>{     
+      let people = peopleData.map((person,key)=>{  
+        debugger 
         return <SafeAreaView key={key} style={styles.item}>
                   <Text>{person.name.firstName} {person.name.lastName}</Text>
                   <Text>Email: {person.email} </Text>
                </SafeAreaView>
-      })
-      
+      })   
       return(
         <SafeAreaView style={styles.container}>
           {people} 
           <Button title="load people" onPress={()=>handleLoader()}></Button>
+          <Button title="Sort People" onPress={()=>handleSort()}></Button>
         </SafeAreaView>
       );
     }
-  
 }
 
 const styles = StyleSheet.create({
