@@ -14,7 +14,7 @@ export default function App(){
       return fetch("https://my.api.mockaroo.com/users.json?page=20&count=5&key=930279b0")
       .then((response)=> response.json())
       .then((responseJson)=>{
-      debugger
+      setLoadBlocker(false)
       setPeopleData(peopleData.concat(responseJson.entries));
       setIsLoading(false)
       setLoadBlocker(false)
